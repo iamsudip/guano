@@ -57,8 +57,8 @@ public class DumpJob implements Job, Watcher {
 
         String znodePath = znodeParent + znode;
 
-        System.out.println("znodePath: " + znodePath);
-        System.out.println("outputPath: " + outputPath);
+        // System.out.println("znodePath: " + znodePath);
+        // System.out.println("outputPath: " + outputPath);
         String currznode = znodePath.length() == 0 ? "/" : znodePath;
         List<String> children = zk.getChildren(currznode, false);
         if(!children.isEmpty()) {
@@ -70,7 +70,7 @@ public class DumpJob implements Job, Watcher {
             writeZnode(zk, outputPath + "/_znode", currznode);
 
             for(String c : children) {
-                System.out.println("c: " + c);
+                // System.out.println("c: " + c);
                 dumpChild(zk, outputPath + "/" + c, znodePath + "/", c);
             }
         }
