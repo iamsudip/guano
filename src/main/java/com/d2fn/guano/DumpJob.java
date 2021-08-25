@@ -104,9 +104,9 @@ public class DumpJob implements Job, Watcher {
         File f = new File(path);
         if(!f.exists() ) {
             boolean s = f.mkdirs();
-            if (s) {
-                System.out.println("Created folder: " + path);
-            }
+            // if (s) {
+            //     System.out.println("Created folder: " + path);
+            // }
         }
 
     }
