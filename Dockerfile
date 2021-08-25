@@ -3,7 +3,7 @@ FROM adoptopenjdk/openjdk11:alpine-jre
 RUN apk add --update curl python3 py3-pip py-cffi && \
     pip3 install --upgrade pip && \
     pip3 install --upgrade wheel && \
-    apk add --virtual build-deps gcc libffi-dev python3-dev linux-headers musl-dev openssl-dev && \
+    apk add --virtual build-deps gcc libffi-dev python3-dev linux-headers musl-dev openssl-dev rust cargo && \
     pip3 install awscli && \
     pip3 install gsutil && \
     apk del build-deps && \
