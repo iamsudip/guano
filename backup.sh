@@ -40,7 +40,7 @@ mkdir -p "/data/zookeeper/zookeeper${timestamp}"
 cd /data/zookeeper
 
 java $JAVA_OPTIONS -jar /opt/guano/guano-0.1.0.jar -v -s "$ZOOKEEPER_URL" -o "/data/zookeeper/zookeeper${timestamp}" -d "/" || exit 2
-tar cvfz "zookeeper${timestamp}.tar.gz" "zookeeper${timestamp}" || exit 2
+tar cfz "zookeeper${timestamp}.tar.gz" "zookeeper${timestamp}" || exit 2
 gsutil cp "/data/zookeeper/zookeeper${timestamp}.tar.gz" "$BACKUP_LOCATION/$month/zookeeper${timestamp}.tar.gz" || exit 2
 
 rm -rf  "/data/zookeeper/zookeeper${timestamp}" "/data/zookeeper/zookeeper${timestamp}.tar.gz" || exit 0
